@@ -24,9 +24,9 @@
         name: "IB2Theatre",
         data() {
             return {
-                videos: ["https://youtu.be/7Wj_fQSLS64",
-"https://youtu.be/TaVYPUAtocA",
-"https://youtu.be/uDAyt6yKqqU"
+                videos: ["https://youtube.com/embed/7Wj_fQSLS64",
+"https://youtube.com/embed/TaVYPUAtocA",
+"https://youtube.com/embed/uDAyt6yKqqU"
 ]
             }
         }
