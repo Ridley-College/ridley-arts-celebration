@@ -11,19 +11,22 @@
                     <b-collapse id="nav-collapse" is-nav>
                         <b-navbar-nav class="ml-auto">
 <!--                            <b-nav-item to="/">Home</b-nav-item>-->
-                            <b-nav-item-dropdown text="IB Art Exhibition" right>
+                            <!-- <b-nav-item-dropdown text="IB2 Art Exhibition" right>
                                 <b-dropdown-item to="/art_video">Opening Video</b-dropdown-item>
                                 <b-dropdown-item to="/art_exhibition">Art Gallery</b-dropdown-item>
-                            </b-nav-item-dropdown>
-                            <b-nav-item to="/riff">RIFF</b-nav-item>
-                            <b-nav-item-dropdown text="Arts Awards 2020" right>
+                            </b-nav-item-dropdown> -->
+                            <b-nav-item to="/art_exhibition">IB2 Art Exhibition</b-nav-item>
+
+                            <b-nav-item to="/design_tech">Design Technology</b-nav-item>
+                            <b-nav-item to="/film">Film</b-nav-item>
+                            <!-- <b-nav-item-dropdown text="Arts Awards 2020" right>
                                 <b-dropdown-item to="/award_list">Award List</b-dropdown-item>
                                 <b-dropdown-item to="/award_video">Arts Award Video</b-dropdown-item>
-                            </b-nav-item-dropdown>
-                            <b-nav-item-dropdown text="Arts Gallery" right>
-                                <b-dropdown-item to="/art_gallery">Visual Arts</b-dropdown-item>
-                                <b-dropdown-item to="/media">Media Arts</b-dropdown-item>
-                            </b-nav-item-dropdown>
+                            </b-nav-item-dropdown> -->
+                            <b-nav-item to="/art_gallery">Visual Art</b-nav-item>
+                                <!-- <b-dropdown-item to="/art_gallery">Visual Arts</b-dropdown-item>
+                                <b-dropdown-item to="/media">Media Arts</b-dropdown-item> -->
+                            <!-- </b-nav-item-dropdown> -->
                             <b-nav-item to="/music">Music Gallery</b-nav-item>
                             <b-nav-item-dropdown text="Theatre Gallery" right>
                                 <b-dropdown-item to="/theatre">Theatre Gallery</b-dropdown-item>
@@ -36,12 +39,10 @@
             <br>
             <router-view/>
         </div>
-        <router-link to="/about" class="footer-link" style="text-decoration: none; color: inherit;">
             <footer class="page-footer font-small footer">
                 <div class="footer-copyright text-center footer-text">
                 </div>
             </footer>
-        </router-link>
     </div>
 </template>
 
@@ -52,11 +53,12 @@
         -moz-osx-font-smoothing: grayscale;
         text-align: center;
         color: #2c3e50;
-        background-image: url("./assets/mainbackground.jpg");
+        /* background-image: url("./assets/mainbackground.jpg"); */
         background-repeat: no-repeat;
         background-position: center; /* Center the image */
         background-size: cover; /* Resize the background image to cover the entire container */
         /*background-color: rgba(230, 97, 27, 0.25);*/
+        background-color: #F2F2F2;
     }
 
     h1 {
@@ -111,7 +113,7 @@
     /*}*/
 
     .footer {
-        background-color: rgb(242, 242, 242);
+        background-color: #fff;
         height: 60px;
         display: flex;
         flex-direction: column;
@@ -119,17 +121,17 @@
         transition: .25s;
     }
 
-    .footer:hover {
+    /* .footer:hover {
         background-color: rgb(242, 242, 242);
-    }
+    } */
 
     .footer:after {
-        content: "© 2020 Copyright: Ridley College. Designed by Thomas Lin, David Meng, Phoenix Gao."
+        content: "© 2021 Copyright: Ridley College. Designed by Thomas Lin '20, David Meng '21, Phoenix Gao '20."
     }
 
-    .footer:hover:after {
+    /* .footer:hover:after {
         content: "About Us!"
-    }
+    } */
 
     h2 {
         width: 100%;
