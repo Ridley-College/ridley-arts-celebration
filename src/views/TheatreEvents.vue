@@ -2,7 +2,7 @@
     <div>
         <div class="bar" style="display: flex;">
             <div id="left">
-                <div v-if="windowWidth > 600">
+                <!-- <div v-if="windowWidth > 600">
                     <router-link :to="'/theatre/'+indices[0]" style="text-decoration: none;">
                         <b-button variant="outline" class="pagination-button" @click="reload"><p class="text"><b>{{parse_event(indices[0])}}</b>
                         </p>
@@ -16,7 +16,7 @@
                         </b-button>
                     </router-link>
                 </div>
-                <br>
+                <br> -->
             </div>
 
             <div id="middle">
