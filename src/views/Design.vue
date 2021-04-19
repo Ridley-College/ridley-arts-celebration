@@ -1,13 +1,13 @@
 <template>
     <div class="parent">
         <div class="grid" style="padding-bottom: 20px">
-            <div class="image-container" v-for="event in events" v-bind:key="event">
-                <router-link :to="'/theatre/'+parse_link(event.event)">
+            <div class="image-container" v-for="{class_name, thumbnail} in art_grades" v-bind:key="class_name">
+                <router-link :to="'/design_tech/'+parse_link(class_name)">
                     <div class="zoom-container">
                         <!--suppress HtmlUnknownTarget -->
-                        <img :src="event.thumbnail" alt="Event" style="width:100%; height: 200px;">
+                        <img :src="thumbnail" alt="Grade" style="width:100%; height: 200px; object-fit: contain">
                         <div class="content">
-                            <h1 style="align-self: flex-end">{{event.event}}</h1>
+                            <h1 style="align-self: flex-end">{{class_name}}</h1>
                         </div>
                     </div>
                 </router-link>
@@ -17,18 +17,19 @@
 </template>
 
 <script>
-    import theatre from '../json/theatre.json'
+    import art_gallery from '../json/design_tech.json'
 
     export default {
-        name: "Theatre",
+        name: "VisualArt",
         data() {
             return {
-                events: theatre.events
+                art_grades: art_gallery.grades
             }
         },
         methods: {
             parse_link: function (name) {
-                name = name.replace(/ /g, '_').toLowerCase()
+                name = name.replace(/ /g, '_')
+                name = name.toLowerCase()
                 return name
             }
         }
@@ -72,7 +73,17 @@
         max-width: 90%;
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        /* This is better for small screens, once min() is better supported */
+        /* grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr)); */
         grid-gap: 1rem;
+        /* This is the standardized property now, but has slightly less support */
+        /* gap: 1rem */
         margin: auto;
+    }
+
+    .parent {
+        /*display: flex;*/
+        /*flex-direction: column;*/
+        /*justify-content: center;*/
     }
 </style>

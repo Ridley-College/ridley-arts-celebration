@@ -3,14 +3,14 @@
         <div class="bar" style="display: flex;">
             <div id="left">
                 <div v-if="windowWidth > 600">
-                    <router-link :to="'/theatre/'+indices[0]" style="text-decoration: none;">
-                        <b-button variant="outline" class="pagination-button" @click="reload"><p class="text"><b>{{parse_event(indices[0])}}</b>
+                    <router-link :to="'/design_tech/'+indices[0]" style="text-decoration: none;">
+                        <b-button variant="outline" class="pagination-button" @click="reload"><p class="text"><b>{{parse_grade(indices[0])}}</b>
                         </p>
                         </b-button>
                     </router-link>
                 </div>
                 <div v-else>
-                    <router-link :to="'/theatre/'+indices[0]" style="text-decoration: none;">
+                    <router-link :to="'/design_tech/'+indices[0]" style="text-decoration: none;">
                         <b-button variant="outline" class="pagination-button" @click="reload">
                             <p class="text"><b>←</b></p>
                         </b-button>
@@ -21,21 +21,21 @@
 
             <div id="middle">
                 <h1>
-                    {{parse_event(event)}}
+                    {{parse_grade(grade)}} Design Technology
                 </h1>
                 <br v-if="windowWidth < 600">
             </div>
             <div id="right">
                 <div v-if="windowWidth > 600">
-                    <router-link :to="'/theatre/'+indices[1]" style="text-decoration: none;">
+                    <router-link :to="'/design_tech/'+indices[1]" style="text-decoration: none;">
                         <b-button variant="outline" class="pagination-button" @click="reload"><p class="text">
-                            <b>{{parse_event(indices[1])}}</b>
+                            <b>{{parse_grade(indices[1])}}</b>
                         </p>
                         </b-button>
                     </router-link>
                 </div>
                 <div v-else>
-                    <router-link :to="'/theatre/'+indices[1]" style="text-decoration: none;">
+                    <router-link :to="'/design_tech/'+indices[1]" style="text-decoration: none;">
                         <b-button variant="outline" class="pagination-button" @click="reload">
                             <p class="text"><b>→</b></p>
                         </b-button>
@@ -61,14 +61,14 @@
 
 <script>
     import Photos from "../components/Photos";
-    import theatre from '../json/theatre.json'
+    import art_gallery from '../json/design_tech.json'
 
     export default {
-        name: "TheatreEvents",
+        name: "Artist",
         components: {Photos},
         data() {
             return {
-                event: this.$route.params.event,
+                grade: this.$route.params.grade,
                 photos: this.get_photos(),
                 class_names: this.get_class_names(),
                 indices: this.get_indices(),
@@ -77,15 +77,18 @@
         }
         ,
         methods: {
-            parse_event: function (input) {
-                let string = input.split('_')
-                for (let i = 0; i < string.length; i++) {
-                    string[i] = string[i][0].toUpperCase() + string[i].slice(1)
+            parse_grade: function (input) {
+                if (input.includes('ib')) {
+                    return input.toUpperCase().replace('_', ' ')
+                } else if (input.includes('design')){
+                    return 'Design Technology'
+                } else{
+                    return (input[0].toUpperCase() + input.slice(1)).replace('_', ' ')
                 }
-                return string.join(' ')
             },
             parse_link: function (name) {
-                name = name.replace(/ /g, '_').toLowerCase()
+                name = name.replace(/ /g, '_')
+                name = name.toLowerCase()
                 return name
             },
             print_: function (input) {
@@ -93,8 +96,8 @@
             },
             get_class_names: function () {
                 let names = []
-                for (let i = 0; i < theatre.events.length; i++) {
-                    names.push(theatre.events[i]["event"])
+                for (let i = 0; i < art_gallery.grades.length; i++) {
+                    names.push(art_gallery.grades[i]["class_name"])
                 }
                 return names
             },
@@ -109,19 +112,19 @@
             get_indices: function () {
                 let indices = []
                 let names = this.get_class_names()
-                let index = names.findIndex(name => name === this.parse_event(this.$route.params.event))
+                let index = names.findIndex(name => name === this.parse_grade(this.$route.params.grade))
                 indices.push(this.parse_link(names[this.mod(index - 1, names.length)]))
                 indices.push(this.parse_link(names[this.mod(index + 1, names.length)]))
                 this.print_(indices)
                 return indices
             },
             get_photos: function () {
-                let temp = theatre.events.find(({event}) => event === this.parse_event(this.$route.params.event))
+                let temp = art_gallery.grades.find(({class_name}) => class_name === this.parse_grade(this.$route.params.grade))
                 if (temp !== undefined) {
                     let p = temp.images
                     for (let i = 0; i < p.length; i++) {
                         if (!p[i].includes("master")) {
-                            p[i] = this.$static + "theatre/" + this.$route.params.event + '/' + p[i]
+                            p[i] = this.$static + "design_tech/" + this.$route.params.grade + '/' + p[i]
                         }
                     }
                     return p
