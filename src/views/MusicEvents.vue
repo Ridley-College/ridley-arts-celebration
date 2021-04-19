@@ -47,6 +47,8 @@
         <div class="grade-images">
             <div v-if="windowWidth > 600">
                 <div v-if ="event=='jazz_band'">
+                            <br>
+
     <div class="parent">
         <div class="iframe-container">
             <iframe v-if="windowWidth > 600" width="640" height="360" src="https://youtube.com/embed/nHiUpYwyV2s"
@@ -73,6 +75,8 @@
     </div>
     </div>
                     <div v-if ="event=='orchestra'">
+                                <br>
+
                          <div class="parent">
         <div class="iframe-container">
             <iframe v-if="windowWidth > 600" width="640" height="360" src="https://youtube.com/embed/Vk8kvryEpy0"
@@ -290,5 +294,20 @@
         align-items: center;
         float: right;
         width: 25%;
+    }
+    .iframe-container {
+        margin: 0 auto;
+        position: relative;
+        width: 75%;
+        padding-bottom: 42.34%;
+        height: 0;
+    }
+
+    .iframe-container iframe {
+        position: absolute;
+        border: 0;
+        top: 0;
+        left: 0;
+        width: 100%;
     }
 </style>
