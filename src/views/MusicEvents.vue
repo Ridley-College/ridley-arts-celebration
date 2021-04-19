@@ -49,23 +49,23 @@
                 <div v-if ="event=='jazz_band'">
     <div class="parent">
         <div class="iframe-container">
-            <iframe v-if="windowWidth > 600" width="640" height="360" src="https://youtu.be/embed/nHiUpYwyV2s"
+            <iframe v-if="windowWidth > 600" width="640" height="360" src="https://youtube.com/embed/nHiUpYwyV2s"
                     frameborder="0"
                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                     style="height: calc(100vh - 175px);"
                     allowfullscreen></iframe>
-            <iframe v-else width="640" height="360" src="https://youtu.be/embed/nHiUpYwyV2s" frameborder="0"
+            <iframe v-else width="640" height="360" src="https://youtube.com/embed/nHiUpYwyV2s" frameborder="0"
                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" style="height: 100%"
                     allowfullscreen></iframe>
         </div>
         <br>
         <div class="iframe-container">
-            <iframe v-if="windowWidth > 600" width="640" height="360" src="https://youtu.be/embed/7sOFUqqOnNE"
+            <iframe v-if="windowWidth > 600" width="640" height="360" src="https://youtube.com/embed/7sOFUqqOnNE"
                     frameborder="0"
                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                     style="height: calc(100vh - 175px);"
                     allowfullscreen></iframe>
-            <iframe v-else width="640" height="360" src="https://youtu.be/embed/7sOFUqqOnNE" frameborder="0"
+            <iframe v-else width="640" height="360" src="https://youtube.com/embed/7sOFUqqOnNE" frameborder="0"
                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" style="height: 100%"
                     allowfullscreen></iframe>
         </div>
