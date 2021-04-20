@@ -74,7 +74,8 @@
     </div>
     </div>
                     <div v-if ="event=='orchestra'">
-                        <br>
+                        <br>                <br>
+
                          <div class="parent">
         <div class="iframe-container">
             <iframe v-if="windowWidth > 1200" width="640" height="360" src="https://youtube.com/embed/Vk8kvryEpy0"
@@ -86,7 +87,8 @@
                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" style="height: 100%"
                     allowfullscreen></iframe>
         </div>
-                <br>
+                <br>                <br>
+
 
         <div class="iframe-container">
             <iframe v-if="windowWidth > 1200" width="640" height="360" src="https://youtube.com/embed/9dWxxFl6664"
@@ -98,7 +100,7 @@
                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" style="height: 100%"
                     allowfullscreen></iframe>
         </div>
-        <br>
+        <br>                <br>
         <div class="iframe-container">
             <iframe v-if="windowWidth > 1200" width="640" height="360" src="https://youtube.com/embed/MqDdDVaKBrY"
                     frameborder="0"
