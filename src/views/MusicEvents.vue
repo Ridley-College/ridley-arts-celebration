@@ -86,6 +86,8 @@
                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" style="height: 100%"
                     allowfullscreen></iframe>
         </div>
+                <br>
+
         <div class="iframe-container">
             <iframe v-if="windowWidth > 1200" width="640" height="360" src="https://youtube.com/embed/9dWxxFl6664"
                     frameborder="0"
