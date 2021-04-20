@@ -126,7 +126,7 @@
     } */
 
     .footer:after {
-        content: "© 2021 Copyright: Ridley College. Designed by Thomas Lin '20, David Meng '21, Phoenix Gao '20."
+        content: "© 2021 Copyright: Ridley College. Developed by Thomas Lin '20, David Meng '21, Phoenix Gao '20."
     }
 
     /* .footer:hover:after {
