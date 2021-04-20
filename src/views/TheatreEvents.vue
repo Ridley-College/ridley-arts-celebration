@@ -20,8 +20,9 @@
             </div>
 
             <div id="middle">
-                <h1>
-                    {{parse_event(event)}}
+                <h1> <a :href= "link">
+                   {{parse_event(event)}}
+                   </a>
                 </h1>
                 <br v-if="windowWidth < 600">
             </div>
@@ -72,7 +73,8 @@
                 photos: this.get_photos(),
                 class_names: this.get_class_names(),
                 indices: this.get_indices(),
-                shuffled: false
+                shuffled: false,
+                link: this.get_link()
             }
         }
         ,
@@ -126,7 +128,11 @@
                     }
                     return p
                 }
-            },
+            },  
+            get_link:function(){
+                let temp = theatre.events.find(({event}) => event === this.parse_event(this.$route.params.event))
+                return temp.link
+            }
             // computed: {}
         }
     }
