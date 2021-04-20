@@ -2,6 +2,7 @@
     "events": [
       {
         "event": "Midsummer Night's Dream",
+        "link": "https://www.youtube.com/watch?v=h0_q2M9OJIw",
         "thumbnail": "https://raw.githubusercontent.com/thomaslin2020/ridley-arts-celebration/master/src/assets/theatre/midsummer_night's_dream/1.JPG",
         "images": [
           "1.jpg",
@@ -28,6 +29,7 @@
       },
       {
         "event": "Unmasked",
+        "link": "https://www.youtube.com/watch?v=Kf15tHnDA_Q",
         "thumbnail": "https://raw.githubusercontent.com/thomaslin2020/ridley-arts-celebration/master/src/assets/theatre/unmasked/1.jpg",
         "images": [
           "1.jpg",
