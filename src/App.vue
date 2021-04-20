@@ -3,7 +3,7 @@
         <div class="main-container">
             <div id="nav">
                 <b-navbar id="nav_bar" toggleable="md" type="light" variant="light">
-                    <b-navbar-brand to="/award_video">
+                    <b-navbar-brand to="/art_exhibition">
                         <img src="https://d3gec4yjx788g8.cloudfront.net/platform/3282/assets/logo.png"
                              style="max-width: 250px;" alt="Logo"/>
                     </b-navbar-brand>
